@@ -2,7 +2,9 @@
 
 # 0. Intro
 
-Crontab is a Unix-like system utility to help us to execute jobs periodical and automatically. We present quick configuration for executing peridoc task with an Ubuntu based Linux distro.
+Crontab is a Unix-like system utility to help us to execute jobs periodical and
+automatically. We present quick configuration for executing periodic task with
+an Ubuntu based Linux distro.
 
 # 1. Set up
 
@@ -20,7 +22,8 @@ Optional:
 export EDITOR="nano"
 ```
 
-**Note:** You can make it permanent adding the last command to .bashrc file of your profile and then use command "source .bashrc".
+**Note:** You can make it permanent adding the last command to .bashrc file of
+your profile and then use command "source .bashrc".
 
 # 2. Basic use and sintaxis
 
@@ -28,28 +31,32 @@ export EDITOR="nano"
 
 ## 2.1 Basics
 
-Crontab works by editing some text file from our machine (typically /etc/crontab, but can also uses /etc/cron.d). Basically, we have to create a bash script for Crontab using command:
+Crontab works by editing some text file from our machine (typically
+  /etc/crontab, but can also uses /etc/cron.d). Basically, we have to create a
+  bash script for Crontab using command:
 
 ```bash
 crontab -e
 ```
 
-This will open our text editor in terminal and let us introduce command by following the next structure that specifies at what moment the job will be executed:
+This will open our text editor in terminal and let us introduce command by
+following the next structure that specifies at what moment the job will be
+executed:
 
 ```bash
-.---------------- minute (0 - 59) 
+.---------------- minute (0 - 59)
 |  .------------- hour (0 - 23)
 |  |  .---------- day of month (1 - 31)
-|  |  |  .------- month (1 - 12) OR jan,feb,mar,apr ... 
-|  |  |  |  .---- day of week (0 - 6) (Sunday=0 or 7)  OR sun,mon,tue,wed,thu,fri,sat 
+|  |  |  .------- month (1 - 12) OR jan,feb,mar,apr ...
+|  |  |  |  .---- day of week (0 - 6) (Sunday=0 or 7)  OR sun,mon,tue,wed,thu,fri,sat
 |  |  |  |  |
 *  *  *  *  *  command to be executed
 ```
 
-Note: 
+Note:
 
-+ After saving changes in you text editor and after that cron will begin with the automatic executions.
-+ Crontab it dependens on internal clock of your Unix-like machine to execute the jobs periodically.
++ After saving changes in you text editor and cron will begin with the automatic executions.
++ Crontab it depends on internal clock of your Unix-like machine to execute the jobs periodically.
 
 **More fun with Crontab**
 
@@ -62,7 +69,7 @@ Note:
 
 ### 2.1.1 Examples
 
-*Run each minute to write a bash command ouptput to a text*
+*Run each minute to write a bash command output to a text*
 
 ```bash
 * * * * * echo "I was ran in this date: $(date)" >> /my_path/example.txt
@@ -110,10 +117,12 @@ contrab -r
 
 ## 2.3 Paths and execution on bash terminal
 
-Please note that in Unix systems we can locate a program file in the user's path using *which* command. For example, we can find related to Python and Rscript (a bash utility to run R commands and scripts):
+Please note that in Unix systems we can locate a program file in the user's path
+using *which* command. For example, we can find related to Python and Rscript
+(a bash utility to run R commands and scripts):
 
 ```bash
-which python 
+which python
 # /Users/my_user/.pyenv/shims/python
 
 which Rscript
@@ -124,7 +133,7 @@ With this information, we can execute Python adn R file from terminal in two way
 
 **Route 1: specifing paths on terminal**
 
-You can help to execute a Python/R script by specifying the path where they are located, 
+You can help to execute a Python/R script by specifying the path where they are located,
 
 ```bash
 /my_path_to_python hello_world.py # python
@@ -140,12 +149,12 @@ You can help to execute a Python/R script by specifying the path where they are 
 /Users/my_user/.pyenv/shims/python hello_world.py
 ```
 
-**Route 2: shebang notation #!** 
+**Route 2: shebang notation #!**
 
 We can add a header to out script to tell bash where to find the program that will execute a script, as follows:
 
 ```
-#!//my_path_to_Rscript
+#!/my_path_to_Rscript
 ...
 # Some cool code
 # More of that cool code
@@ -228,5 +237,3 @@ crontab -e
   ```bash
   man crontab
   ```
-
-  
