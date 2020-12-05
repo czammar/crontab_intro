@@ -28,9 +28,7 @@ export EDITOR="nano"
 
 ## 2.1 Basics
 
-Crontab works by editing some text file from our machine (typically /etc/crontab, but can also uses /etc/cron.d)
-
-Basically, we have to create a bash script for Crontab using command:
+Crontab works by editing some text file from our machine (typically /etc/crontab, but can also uses /etc/cron.d). Basically, we have to create a bash script for Crontab using command:
 
 ```bash
 crontab -e
@@ -112,9 +110,7 @@ contrab -r
 
 ## 2.3 Paths and execution on bash terminal
 
-Please note that in Unix systems we can locate a program file in the user's path using
-
-*which* command. For example, we can find related to Python and Rscript (a bash utility to run R commands and scripts):
+Please note that in Unix systems we can locate a program file in the user's path using *which* command. For example, we can find related to Python and Rscript (a bash utility to run R commands and scripts):
 
 ```bash
 which python 
@@ -124,7 +120,7 @@ which Rscript
 # /Users/my_user/opt/anaconda3/bin/Rscript
 ```
 
-With this information, we can execute Python adn R file from terminal
+With this information, we can execute Python adn R file from terminal in two ways:
 
 **Route 1: specifing paths on terminal**
 
@@ -169,7 +165,7 @@ And run the script:
 
 ## 2.4 Python/R scripts and Crontab
 
-To execite a Crontab job for Python o R, we have to combine the previous knowledge:
+To execute a Crontab job for Python o R, we have to combine the previous knowledge:
 
 **Example 1**
 
@@ -198,7 +194,7 @@ crontab -e
 
 *my_example.R*
 
-```
+```R
 #!/my_path_to_Rscript
 HelloBrenda <- function(){
    print('hello')
