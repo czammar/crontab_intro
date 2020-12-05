@@ -181,7 +181,8 @@ To execute a Crontab job for Python o R, we have to combine the previous knowled
 *my_example.py*
 
 ```
-#!/my_path_to_Rscript
+#!/my_path_to_python
+
 print("Hello Brenda")
 ```
 
